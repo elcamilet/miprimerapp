@@ -25,8 +25,8 @@ module.exports = {
 		var obj = this.toObject();
 		delete obj.password;
 		return obj;
-	}
-  }
+	},
+  },
 
   beforeCreate: function(values, next) {
 	hashPassword(values, next);
@@ -35,7 +35,7 @@ module.exports = {
   beforeUpdate: function(values, next) {
 	if(values.password) hashPassword(values, next);
 	else next();
-  }
+  },
 
 };
 
