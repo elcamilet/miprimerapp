@@ -28,4 +28,23 @@ module.exports = {
 	}
   }
 
+  beforeCreate: function(values, next) {
+	hashPassword(values, next);
+  },
+
+  beforeUpdate: function(values, next) {
+	if(values.password) hashPassword(values, next);
+	else next();
+  }
+
 };
+
+var bcrypt = require('bcrypt');
+
+function hashPassword(values, next) {
+	bcrypt.hash(values.password, 10, function(err, hash){
+		if(err) return next(err);
+		values.password = hash;
+		next();
+	});
+}
