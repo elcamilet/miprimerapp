@@ -17,14 +17,37 @@
 
 module.exports = {
     
+	auth: function(req, res) {
+		return res.view();
+	}
+
+	login: function(req, res) {
+		User.findOne({email: req.param('email')}).done(function foundUser(err, user){
+			if ( err || !user ) return res.redirect('/auth');
+			require('bcrypt').compare(req.param('password'), user.password, function(err, valid){
+				if(err || !valid ) return res.redirect('/auth');
+				req.session.authenticated = true;
+				req.session.user = user;
+				return res.redirect('/user/' + user.id);
+			});
+		});
+	}
+
+	create: function(req, res, next) {
+		User.create( req.params.all(), function createdUser(err, user){
+			[…]
+			req.session.authenticated = true;
+			req.session.user = user;
+			[…]
+		});
+	}
   
+	logout: function(req, res){
+		req.session.destroy();
+		return res.redirect('/');
+	}
 
-
-  /**
-   * Overrides for the settings in `config/controllers.js`
-   * (specific to UserController)
-   */
-  _config: {}
+	_config: {}
 
   
 };
