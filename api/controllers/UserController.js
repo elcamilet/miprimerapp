@@ -146,7 +146,7 @@ module.exports = {
 	 */
 	login: function(req, res) {
 		// Get the unique user with this email.
-		User.findOne({email: req.param('email')}).done(function(err, user){
+		User.findOne({nick: req.param('nick')}).done(function(err, user){
 			// If there are an error,
 			// or the user doesn't exist,
 			// return to auth page.
