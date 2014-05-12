@@ -1,3 +1,0 @@
-2014-04-30T15:00:42+00:00 heroku[slug-compiler]: Slug compilation failed: failed to compile Node.js app
-2014-04-30T15:24:34+00:00 heroku[slug-compiler]: Slug compilation started
-2014-04-30T15:26:10+00:00 heroku[slug-compiler]: Slug compilation failed: failed to compile Node.js app
