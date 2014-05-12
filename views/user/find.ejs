@@ -27,8 +27,7 @@ if ( typeof users === 'undefined' ) {
 <h2>Users <a class="btn btn-sm btn-default" href="/user/new"><%= __('Create new') %></a></h2>
 <ul>
 <% _.each(users, function(user){ %>
-	<!-- <li><a href="/user/<%= user.id %>"><%= user.email %></a></li> -->
-	<li><%= user.email %></li>
+	<li><a href="/user/<%= user.id %>"><%= user.email %></a></li>
 <% }); %>
 </ul>
 
