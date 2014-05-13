@@ -73,11 +73,7 @@
       </div>
 
       <section class="container">
-        <% if( session.authenticated ) { %>
-          <%- partial('user/find')%>
-        <% } else { %>
           <%- body %>
-        <% } %>
       </section>
     </div>
 
