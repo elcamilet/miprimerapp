@@ -17,7 +17,10 @@
 
 module.exports = {
     
-  
+new: function(req, res) {
+		// Response the view with the action's name.
+		return res.view();
+	},  
 
 
   /**
