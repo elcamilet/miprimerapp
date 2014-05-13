@@ -53,7 +53,7 @@
             </ul>
             <% if( session.authenticated ) { %>
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="/user/<%= session.user.id %>"><%= session.user.nick %></a>
+                <li><a href="/user/<%= session.user.id %>"><%= user.nick %></a>
                 </li>
                 <li>
                   <form class="navbar-form" action="/user/logout">
