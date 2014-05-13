@@ -31,83 +31,6 @@
     <link rel="stylesheet" href="/linker/styles/bootstrap.css">
     <link rel="stylesheet" href="/linker/styles/bootstrap-theme.css">
     <link rel="stylesheet" href="/linker/styles/elcamilet.css">
-<<<<<<< HEAD
-    <!--STYLES END-->
-  </head>
-
-  <body>
-    <div id="wrap">
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">miprimerapp</a>
-          </div>
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li<% if( req.url.indexOf('user') != -1) { %> class="active"<% } %>><a href="/user"><%= __('Users') %></a></li>
-            </ul>
-            <% if( session.authenticated ) { %>
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="/user/<%= session.user.id %>"><%= user.nick %></a>
-                </li>
-                <li>
-                  <form class="navbar-form" action="/user/logout">
-                    <button type="submit" class="btn btn-danger" title="<%= __('Sign out')%>"><%= __('Sign out')%> <span class="glyphicon glyphicon-log-out"></span></button>
-                  </form>
-                </li>
-              </ul>
-            <% } else { %>
-              <ul class="nav navbar-nav navbar-right">
-                <li>
-                <li><a href="/user/new"><span class="glyphicon glyphicon-edit"></span> Crea cuenta</a></li>
-                <li><a href="/user/auth"><span class="glyphicon glyphicon-log-in"></span> Identifícate</a></li>
-              </ul>
-            <% } %>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-
-      <section class="container">
-          <%- body %>
-      </section>
-    </div>
-
-    <footer id="footer" class="navbar navbar-default navbar-fixed-bottom">
-      <div class="container">
-        <p class="text-muted">©ElCamilet 2014</p>
-      </div>
-    </footer>
-
-
-
-    <!--
-        Client-side Templates
-        ========================
-
-    		HTML templates are important prerequisites of modern, rich client applications.
-        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
-        that you load these templates client-side.
-
-        By default, your Gruntfile is configured to automatically load and precompile
-        client-side JST templates in your `assets/linker/templates` folder, then
-        include them here automatically.
-        
-        To customize this behavior to fit your needs, just edit your Gruntfile.
-        For example, here are a few things you could do:
-
-            + Import templates from other directories
-            + Use a different template engine (handlebars, jade, dust, etc.)
-            + Internationalize your templates using a server-side stringfile
-              before they're served.
-    -->
-
-=======
     <!--STYLES END-->
   </head>
 
@@ -150,11 +73,7 @@
       </div>
 
       <section class="container">
-        <% if( session.authenticated ) { %>
-          <%- partial('user/find')%>
-        <% } else { %>
-          <%- body %>
-        <% } %>
+        <%- body %>
       </section>
     </div>
 
@@ -170,7 +89,7 @@
         Client-side Templates
         ========================
 
-    		HTML templates are important prerequisites of modern, rich client applications.
+        HTML templates are important prerequisites of modern, rich client applications.
         To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
         that you load these templates client-side.
 
@@ -187,7 +106,6 @@
               before they're served.
     -->
 
->>>>>>> f4602a163b7a96979307a86135f726e6517be62c
     <!--TEMPLATES-->
     
     <!--TEMPLATES END-->
