@@ -13,7 +13,18 @@ module.exports = {
   	/* e.g.
   	nickname: 'string'
   	*/
-    
+    nombre: {
+    	type: 'string',
+    	required: true
+    },
+    descripcion: {
+    	type: 'string',
+    	required: false
+    },
+    fecha: {
+    	type: 'string',
+    	required: false
+    }
   }
 
 };
