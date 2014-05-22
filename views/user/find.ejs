@@ -5,6 +5,7 @@ if ( typeof users === 'undefined' ) {
 <ol class="breadcrumb">
 	<li><a href="/"><%= __('Home') %></a></li>
 	<li><a href="/user/"><%= __('Users') %></a></li>
+	<li><a href="/event/"><%= __('Events') %></a></li>
 	<li class="active"><%= user.nick %></li>
 </ol>
 
@@ -14,11 +15,6 @@ if ( typeof users === 'undefined' ) {
 	<input type="hidden" name="_method" value="delete"/>
 	<input type="submit" class="btn btn-danger" value="<%= __('Delete') %>"/>
 </form>
-<a class="btn btn-primary" href="../event/new/<%= user.id %>">Nuevo evento</a>
-<span>
-	<%- partial('../event/find')%>
-</span>
-
 
 <%
 } else {

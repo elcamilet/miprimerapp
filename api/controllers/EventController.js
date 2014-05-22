@@ -21,7 +21,10 @@ new: function(req, res) {
 		// Response the view with the action's name.
 		return res.view();
 	},  
-
+find: function(req, res) {
+		// Response the view with the action's name.
+		return res.view();
+	},  
 
   /**
    * Overrides for the settings in `config/controllers.js`
