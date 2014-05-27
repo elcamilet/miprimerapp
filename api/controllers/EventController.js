@@ -23,7 +23,7 @@ new: function(req, res) {
 			return res.view();	
 		}
 		else{
-			return res.forbidden('You are not permitted to perform this action.');
+			return res.redirect('/');
 		}
 		
 	},  
