@@ -16,7 +16,7 @@ module.exports = {
 		unique: true
 	},
 
-	nick: {
+	username: {
 		type: 'string',
 		required: true,
 		unique: true
