@@ -9,7 +9,9 @@
     "ejs": "0.8.4",
     "optimist": "0.3.4",
     "sails-mongo": "~0.9.7",
-    "bcrypt": "~0.7.7"
+    "bcrypt": "~0.7.7",
+    "passport-local": "~1.0.0",
+    "passport": "~0.2.0"
   },
   "engines": {
     "node": "0.10.22"
