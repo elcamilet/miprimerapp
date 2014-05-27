@@ -19,11 +19,22 @@ module.exports = {
     
 new: function(req, res) {
 		// Response the view with the action's name.
-		return res.view();
+		if (req.session.authenticated){
+			return res.view();	
+		}
+		else{
+			return res.forbidden('You are not permitted to perform this action.');
+		}
+		
 	},  
 find: function(req, res) {
 		// Response the view with the action's name.
-		return res.view();
+		if(req.session.authenticated){
+			return res.view();
+		}
+		else{
+			return res.redirect('/');
+		}
 	},  
 
   /**
