@@ -19,7 +19,7 @@ module.exports = {
     
 new: function(req, res) {
 		// Response the view with the action's name.
-		if (req.loggedUser){
+		if (req.isAuthenticated()){
 			return res.view();	
 		}
 		else{
@@ -29,7 +29,7 @@ new: function(req, res) {
 	},  
 find: function(req, res) {
 		// Response the view with the action's name.
-		if(req.loggedUser){
+		if(req.isAuthenticated()){
 			return res.view();
 		}
 		else{

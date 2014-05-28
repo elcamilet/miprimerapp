@@ -19,6 +19,8 @@ if ( typeof users === 'undefined' ) {
 		<input type="hidden" name="_method" value="delete"/>
 		<input type="submit" class="btn btn-danger" value="<%= __('Delete') %>"/>
 	</form>
+	<br>
+	<a class="btn btn-primary" href="/event/<%= user.id %>">Eventos</a>
 	<% } %>
 <%
 } else {
