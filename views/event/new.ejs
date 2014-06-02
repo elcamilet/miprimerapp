@@ -4,4 +4,20 @@
 	<li class="active"><%= loggedUser.username %></li>
 </ol>
 
-<h2>Aqui es creen els Events del usuari: <%= loggedUser.username %></h2>
+<form role="form" action="/event" method="POST" class="form-center" id="new-event-form">
+	<h2 class="form-signin-heading"><%= __('Create event') %></h2>
+	<div class="form-group">
+		<label for="nombre"><%= __('Nombre') %></label>
+		<input type="string" class="form-control" placeholder="<%= __('Nombre del evento') %>" name="nombre" id="nombre" required />
+	</div>
+	<div class="form-group">
+		<label for="descripcion"><%= __('Descripción') %></label>
+		<input type="string" class="form-control" placeholder="<%= __('Descripción') %>" name="descripcion" id="descripcion" required />
+	</div>
+	<div class="form-group">
+		<label for="fecha"><%= __('Fecha') %></label>
+		<input type="string" class="form-control" placeholder="<%= __('Fecha') %>" name="fecha" id="fecha" required />
+	</div>
+	<input type="hidden" name="usuario" value="<%= loggedUser.id %>">
+	<input type="submit" class="btn btn-primary btn-block" value="<%= __('Crea evento') %>" />
+</form>

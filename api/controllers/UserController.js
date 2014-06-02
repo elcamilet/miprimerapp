@@ -55,6 +55,7 @@ module.exports = {
 				where: where || undefined
 			};
 			// Find users according with filters
+			console.log(filters);
 			User.find(filters).done(function foundUsers(err, users){
 				if ( err ) return next(err);
 				// Response JSON if needed.

@@ -28,15 +28,28 @@ new: function(req, res) {
 		
 	},  
 find: function(req, res) {
-		// Response the view with the action's name.
+
 		if(req.isAuthenticated()){
-			return res.view();
+			Event.findByUsuario(req.param('id')).done(function foundEvent(err, event){
+				if ( err ) return next(err);
+				return res.view({ event: event });
+					//return res.json(event);
+			});
 		}
 		else{
 			return res.redirect('/');
 		}
 	},  
-
+create: function(req, res, next) {
+		// Create an user using all params.
+		// Schema is true, then we will save that we need.
+		Event.create( req.params.all(), function createdEvent(err, event){
+			if (err) return next(err);
+			if (req.wantsJSON) return res.json(201, event);
+			else return res.redirect('/event/' + req.param('usuario'));
+			
+		});
+	},
   /**
    * Overrides for the settings in `config/controllers.js`
    * (specific to EventController)

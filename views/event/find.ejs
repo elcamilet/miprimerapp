@@ -6,4 +6,10 @@
 <br>
 <a class="btn btn-primary" href="../event/new/<%= loggedUser.id %>">Nuevo evento</a>
 <br>
-<h1> HOLA EVENTO DE <%= loggedUser.username %> </h1>
+<h1> HOLA <%= loggedUser.username %> </h1>
+<ul>
+<% _.each(event, function(event){ %>
+	<li>El día <%= event.fecha %> tienes el evento: <b><%= event.nombre %></b></li>
+	<li><%= event.descripcion %></li><hr>
+<% }); %>
+</ul>

@@ -24,6 +24,10 @@ module.exports = {
     fecha: {
     	type: 'string',
     	required: false
+    },
+    usuario: {
+      type: 'string',
+      required: true
     }
   }
 
