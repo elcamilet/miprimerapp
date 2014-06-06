@@ -5,7 +5,7 @@ if ( typeof users === 'undefined' ) {
 %>
 <ol class="breadcrumb">
 	<li><a href="/"><%= __('Home') %></a></li>
-	<li><a href="/user/?where={'email':{'contains':'@'}}&limit=2&sort=email DESC"><%= __('Users') %></a></li>
+	<li><a href='/user/?where={"email":{"contains":"@"}}&limit=2&sort=email DESC'><%= __('Users') %></a></li>
 	<li class="active"><%= user.username %></li>
 </ol>
 
