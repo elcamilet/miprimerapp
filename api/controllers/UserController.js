@@ -56,6 +56,7 @@ module.exports = {
 			};
 			// Find users according with filters
 			console.log(filters);
+			console.log(req.params.all());
 			User.find(filters).done(function foundUsers(err, users){
 				if ( err ) return next(err);
 				// Response JSON if needed.
